@@ -1,0 +1,19 @@
+name: CodeQL SAST PoC Angular
+on:
+  workflow_dispatch:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  schedule:
+    - cron: '47 5 * * 3'
+permissions:
+  contents: read
+  security-events: write
+  actions: read
+jobs:
+  codeql:
+    uses: DavidFaustino/ssdlc-codeql-poc/.github/workflows/codeql-reusable.yml@2ff7460c78385c2302bea6e310478baa8d2676bc
+    with:
+      profile: angular
+      query_suite: default
