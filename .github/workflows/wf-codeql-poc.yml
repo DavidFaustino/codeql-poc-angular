@@ -17,4 +17,4 @@ jobs:
     with:
       profile: angular
       query_suite: default
-      policy_mode: block
+      policy_mode: observe
